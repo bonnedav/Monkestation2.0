@@ -141,6 +141,11 @@
 
 /obj/effect/mapping_helpers/airlock/access/any/medical/general/get_access()
 	var/list/access_list = ..()
+	access_list += ACCESS_MEDBAY
+	return access_list
+
+/obj/effect/mapping_helpers/airlock/access/any/medical/medicine/get_access()
+	var/list/access_list = ..()
 	access_list += ACCESS_MEDICAL
 	return access_list
 
@@ -181,7 +186,7 @@
 
 /obj/effect/mapping_helpers/airlock/access/any/medical/maintenance/get_access()
 	var/list/access_list = ..()
-	access_list += list(ACCESS_MEDICAL, ACCESS_MAINT_TUNNELS)
+	access_list += list(ACCESS_MEDBAY, ACCESS_MAINT_TUNNELS)
 	return access_list
 
 // -------------------- Science access helpers
@@ -627,6 +632,11 @@
 	icon_state = "access_helper_med"
 
 /obj/effect/mapping_helpers/airlock/access/all/medical/general/get_access()
+	var/list/access_list = ..()
+	access_list += ACCESS_MEDBAY
+	return access_list
+
+/obj/effect/mapping_helpers/airlock/access/all/medical/medicine/get_access()
 	var/list/access_list = ..()
 	access_list += ACCESS_MEDICAL
 	return access_list

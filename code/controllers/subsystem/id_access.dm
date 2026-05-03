@@ -113,6 +113,7 @@ SUBSYSTEM_DEF(id_access)
 /datum/controller/subsystem/id_access/proc/setup_region_lists()
 	accesses_by_region[REGION_ALL_STATION] = REGION_ACCESS_ALL_STATION
 	accesses_by_region[REGION_ALL_GLOBAL] = REGION_ACCESS_ALL_GLOBAL
+	accesses_by_region[REGION_COMMON] = REGION_ACCESS_COMMON
 	accesses_by_region[REGION_GENERAL] = REGION_ACCESS_GENERAL
 	accesses_by_region[REGION_SECURITY] = REGION_ACCESS_SECURITY
 	accesses_by_region[REGION_MEDBAY] = REGION_ACCESS_MEDBAY
@@ -154,38 +155,38 @@ SUBSYSTEM_DEF(id_access)
 
 	sub_department_managers_tgui = list(
 		"[ACCESS_CAPTAIN]" = list(
-			"regions" = list(REGION_COMMAND),
+			"regions" = list(REGION_COMMAND, REGION_COMMON,),
 			"head" = JOB_CAPTAIN,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_HOP]" = list(
 			//ACCESS_SUPPLY we exclude this because it would make the QM's ID trimmer able to edit service
-			"regions" = list(REGION_GENERAL),
+			"regions" = list(REGION_GENERAL, REGION_COMMON,),
 			"head" = JOB_HEAD_OF_PERSONNEL,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_HOS]" = list(
-			"regions" = list(REGION_SECURITY),
+			"regions" = list(REGION_SECURITY, REGION_COMMON,),
 			"head" = JOB_HEAD_OF_SECURITY,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_CMO]" = list(
-			"regions" = list(REGION_MEDBAY),
+			"regions" = list(REGION_MEDBAY, REGION_COMMON,),
 			"head" = JOB_CHIEF_MEDICAL_OFFICER,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_RD]" = list(
-			"regions" = list(REGION_RESEARCH),
+			"regions" = list(REGION_RESEARCH, REGION_COMMON,),
 			"head" = JOB_RESEARCH_DIRECTOR,
 			"templates" = list(),
 			"pdas" = list(),
 		),
 		"[ACCESS_CE]" = list(
-			"regions" = list(REGION_ENGINEERING),
+			"regions" = list(REGION_ENGINEERING, REGION_COMMON,),
 			"head" = JOB_CHIEF_ENGINEER,
 			"templates" = list(),
 			"pdas" = list(),
@@ -257,10 +258,11 @@ SUBSYSTEM_DEF(id_access)
 	desc_by_access["[ACCESS_BRIG]"] = "Holding Cells"
 	desc_by_access["[ACCESS_COURT]"] = "Courtroom"
 	desc_by_access["[ACCESS_DETECTIVE]"] = "Detective Office"
+	desc_by_access["[ACCESS_MEDBAY]"] = "Medbay"
 	desc_by_access["[ACCESS_MEDICAL]"] = "Medical"
 	desc_by_access["[ACCESS_GENETICS]"] = "Genetics Lab"
 	desc_by_access["[ACCESS_MORGUE]"] = "Morgue"
-	desc_by_access["[ACCESS_SCIENCE]"] = "R&D Lab"
+	desc_by_access["[ACCESS_SCIENCE]"] = "Science"
 	desc_by_access["[ACCESS_ORDNANCE]"] = "Ordnance Lab"
 	desc_by_access["[ACCESS_ORDNANCE_STORAGE]"] = "Ordnance Storage"
 	desc_by_access["[ACCESS_PLUMBING]"] = "Chemistry Lab"
@@ -297,7 +299,7 @@ SUBSYSTEM_DEF(id_access)
 	desc_by_access["[ACCESS_QM]"] = "Quartermaster"
 	desc_by_access["[ACCESS_SURGERY]"] = "Surgery"
 	desc_by_access["[ACCESS_THEATRE]"] = "Theatre"
-	desc_by_access["[ACCESS_RESEARCH]"] = "Science"
+	desc_by_access["[ACCESS_RESEARCH]"] = "Research"
 	desc_by_access["[ACCESS_MINING]"] = "Mining Dock"
 	desc_by_access["[ACCESS_SHIPPING]"] = "Cargo Shipping"
 	desc_by_access["[ACCESS_VAULT]"] = "Main Vault"

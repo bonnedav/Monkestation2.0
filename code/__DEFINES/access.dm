@@ -77,7 +77,9 @@
 /// Access for the Chief Engineer's personal quarters in mapping, as well as some other CE-related things.
 #define ACCESS_CE "ce"
 
-/// General access to Medbay, like the front doors, the treatment center, the medical records console, defibrillator mounts, and more.
+/// General access to medbay, allows for entry to Medbay, the treatment center, and the storage/lathe room.
+#define ACCESS_MEDBAY "medbay"
+/// Access to the medical records console, defibrillator mounts, medicine lockers, lifeline, and more.
 #define ACCESS_MEDICAL "medical"
 /// Access to the Morgue.
 #define ACCESS_MORGUE "morgue"
@@ -299,7 +301,6 @@
 	ACCESS_DETECTIVE, \
 	ACCESS_ENGINEERING, \
 	ACCESS_ENGINE_EQUIP, \
-	ACCESS_EVA, \
 	ACCESS_EXTERNAL_AIRLOCKS, \
 	ACCESS_GENETICS, \
 	ACCESS_HYDROPONICS, \
@@ -313,6 +314,7 @@
 	ACCESS_MECH_MINING, \
 	ACCESS_MECH_SCIENCE, \
 	ACCESS_MECH_SECURITY, \
+	ACCESS_MEDBAY, \
 	ACCESS_MEDICAL, \
 	ACCESS_MINERAL_STOREROOM, \
 	ACCESS_MINING, \
@@ -325,7 +327,6 @@
 	ACCESS_PHARMACY, \
 	ACCESS_PLUMBING, \
 	ACCESS_PSYCHOLOGY, \
-	ACCESS_QM, \
 	ACCESS_RESEARCH, \
 	ACCESS_ROBOTICS, \
 	ACCESS_SCIENCE, \
@@ -333,6 +334,7 @@
 	ACCESS_SERVICE, \
 	ACCESS_SHIPPING, \
 	ACCESS_SURGERY, \
+	ACCESS_TECH_STORAGE, \
 	ACCESS_THEATRE, \
 	ACCESS_VIROLOGY, \
 	ACCESS_WEAPONS, \
@@ -350,10 +352,10 @@
 	ACCESS_GATEWAY, \
 	ACCESS_KEYCARD_AUTH, \
 	ACCESS_MINISAT, \
+	ACCESS_QM, \
 	ACCESS_RC_ANNOUNCE, \
 	ACCESS_TCOMMS, \
 	ACCESS_TCOMMS_ADMIN, \
-	ACCESS_TECH_STORAGE, \
 	ACCESS_TELEPORTER, \
 	ACCESS_VAULT, \
 )
@@ -459,6 +461,7 @@
 #define REGION_ACCESS_MEDBAY list( \
 	ACCESS_CMO, \
 	ACCESS_MECH_MEDICAL, \
+	ACCESS_MEDBAY, \
 	ACCESS_MEDICAL, \
 	ACCESS_MORGUE, \
 	ACCESS_PHARMACY, \
@@ -540,6 +543,20 @@
 	ACCESS_NT_REPRESENTATVE, \
 )
 // MONKESTATION ADDITION: Added blueshield and nt rep to command region above
+/// name for the Common region
+#define REGION_COMMON "Common"
+/// Used to seed the accesses_by_region list in SSid_access. A list of all common accesses that are overseen by all heads of staff.
+#define REGION_ACCESS_COMMON list( \
+	ACCESS_AUX_BASE, \
+	ACCESS_CARGO, \
+	ACCESS_CONSTRUCTION, \
+	ACCESS_EXTERNAL_AIRLOCKS, \
+	ACCESS_MAINT_TUNNELS, \
+	ACCESS_MEDBAY, \
+	ACCESS_MINERAL_STOREROOM, \
+	ACCESS_SCIENCE, \
+	ACCESS_SERVICE, \
+)
 
 /// Name for the Centcom region.
 #define REGION_CENTCOM "Central Command"
@@ -620,6 +637,7 @@
 )
 /// All regions that make up the station area. Helper define to quickly designate a region as part of the station or not. Access via SSid_access.station_regions.
 #define REGION_AREA_STATION list( \
+	REGION_COMMON, \
 	REGION_COMMAND, \
 	REGION_ENGINEERING, \
 	REGION_GENERAL, \

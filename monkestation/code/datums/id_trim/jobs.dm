@@ -34,6 +34,7 @@
 		ACCESS_GATEWAY,
 		ACCESS_HYDROPONICS,
 		ACCESS_MAINT_TUNNELS,
+		ACCESS_MEDBAY,
 		ACCESS_MEDICAL,
 		ACCESS_MINERAL_STOREROOM,
 		ACCESS_MINING,
@@ -92,7 +93,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_EXTERNAL_AIRLOCKS,
 		)
-	extra_access = list()
+	extra_access = list(ACCESS_SHIPPING,)
 	template_access = null
 
 /datum/id_trim/job/nanotrasen_representative
@@ -166,7 +167,6 @@
 	extra_access = list(
 		ACCESS_GENETICS,
 		ACCESS_ROBOTICS,
-		ACCESS_AUX_BASE,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
