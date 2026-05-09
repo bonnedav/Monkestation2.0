@@ -72,7 +72,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_EXTERNAL_AIRLOCKS, //how else do they get into space?
 		)
-	extra_access = list()
+	extra_access = list(ACCESS_SHIPPING,)
 	template_access = list(
 		ACCESS_CAPTAIN,
 		ACCESS_CHANGE_IDS,
@@ -93,7 +93,7 @@
 		ACCESS_MAINT_TUNNELS,
 		ACCESS_EXTERNAL_AIRLOCKS,
 		)
-	extra_access = list(ACCESS_SHIPPING,)
+	extra_access = list()
 	template_access = null
 
 /datum/id_trim/job/nanotrasen_representative
